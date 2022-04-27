@@ -35,7 +35,7 @@ body {
   background-color: black;
   height: 40vmin;
   width: 40vmin;
-  /* position: absolute; */
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
