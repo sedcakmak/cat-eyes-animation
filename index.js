@@ -1,20 +1,18 @@
-// const pupilEl = document.querySelectorAll(".eye-pupil");
+const pupilEl = document.querySelector("#pupil");
+var sound = new Howl({
+  src: ["nirvana.wav"],
+  loop: false,
+  volume: 1,
+});
 
 // const wrapper = document.querySelectorAll(".pupil-wrapper");
+let iterationCount = 0;
 
-// const jiggling = [
-//   { transform: "translate(0, 0)" },
-//   { transform: "translate(1px, 1px)" },
-//   { transform: "translate(1px, 1px)" },
-//   { transform: "translate(-1px, -1px)" },
-//   { transform: "translate(1px, 1px)" },
-//   { transform: "translate(0, 0)" },
-// ];
-// const jigglingTiming = {
-//   duration: 200,
-//   iterations: Infinity,
-//   animationDelay: 5000,
-// };
+pupil.onanimationiteration = () => {
+  iterationCount++;
+  console.log(`Animation iteration count: ${iterationCount / 2}`);
+  if (iterationCount === 9) sound.play();
+};
 
 // (function jiggle() {
 //   wrapper.forEach((pupil) => {
@@ -23,7 +21,3 @@
 //     }, 2000);
 //   });
 // })();
-
-// wrapper.forEach((pupil) => {
-//   pupil.animate(jiggling, jigglingTiming);
-// });
