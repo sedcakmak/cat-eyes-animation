@@ -11,7 +11,6 @@ body {
   margin: 10vmin 10vmin 10vmin 10vmin;
   padding: 10vmin;
   display: inline-block;
-  /*background: radial-gradient(circle, #ff8c00 0%, white 100%);*/
   background-color: white;
   border-radius: 0 100%;
   overflow: hidden;
@@ -35,7 +34,6 @@ body {
   background-color: black;
   height: 40vmin;
   width: 40vmin;
-  /* position: absolute; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -43,17 +41,12 @@ body {
     soft-jiggle 3s infinite linear;
   animation: pupillary-reflex 3s infinite ease-out,
     soft-jiggle 3s infinite linear;
-  /* margin: -14vmin 0vmin 0vmin -15vmin;*/
 }
 .pupil-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* -webkit-animation: soft-jiggle 3s infinite linear;
-  animation: soft-jiggle 3s infinite linear; */
-  /* -webkit-animation-delay: 2s;
-  animation-delay: 2s; */
 }
 
 .spark {
@@ -68,11 +61,6 @@ body {
     jiggle 0.4s infinite linear;
   animation: oval-to-circle 3s infinite linear, jiggle 0.4s infinite linear;
 }
-
-/* .spark-wrapper {
-  -webkit-animation: jiggle 0.4s infinite linear;
-  animation: jiggle 0.4s infinite linear;
-} */
 
 @-webkit-keyframes oval-to-circle {
   0% {
@@ -215,41 +203,44 @@ body {
   }
 }
 
-@-webkit-keyframes morph {
-  0%,
-  100% {
-    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+@media screen and (min-width: 481px) and (orientation: portrait) {
+  .eye {
+    padding: 3vmin;
   }
-  34% {
-    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  .eye-iris {
+    padding: 15vmin;
   }
-  50% {
-    opacity: 0.89;
-    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+
+  .eye-pupil {
+    height: 17vmin;
+    width: 17vmin;
   }
-  67% {
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  @-webkit-keyframes pupillary-reflex {
+    0% {
+      width: 6vmin;
+    }
+    25% {
+      width: 6vmin;
+    }
+    75% {
+      width: 17vmin;
+    }
+    100% {
+      width: 17vmin;
+    }
   }
-}
-@keyframes morph {
-  0%,
-  100% {
-    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-  }
-  34% {
-    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
-    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
-  }
-  50% {
-    opacity: 0.89;
-    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-  }
-  67% {
-    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
-    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  @keyframes pupillary-reflex {
+    0% {
+      width: 6vmin;
+    }
+    25% {
+      width: 6vmin;
+    }
+    75% {
+      width: 17vmin;
+    }
+    100% {
+      width: 17vmin;
+    }
   }
 }
