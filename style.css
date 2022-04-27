@@ -4,7 +4,9 @@ body {
   align-items: center;
   background: black;
 }
-
+.eyes {
+  display: flex;
+}
 .eye {
   margin: 10vmin 10vmin 10vmin 10vmin;
   padding: 10vmin;
@@ -26,20 +28,32 @@ body {
   height: 10vmin;
   width: 10vmin;
   position: relative;
+  overflow: hidden;
 }
 .eye-pupil {
   border-radius: 50%;
   background-color: black;
-
   height: 40vmin;
   width: 40vmin;
+  /* position: absolute; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: pupillary-reflex 3s infinite ease-out,
+    soft-jiggle 3s infinite linear;
+  animation: pupillary-reflex 3s infinite ease-out,
+    soft-jiggle 3s infinite linear;
+  /* margin: -14vmin 0vmin 0vmin -15vmin;*/
+}
+.pupil-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  -webkit-animation: pupillary-reflex 3s infinite ease-out;
-          animation: pupillary-reflex 3s infinite ease-out;
-  /* margin: -14vmin 0vmin 0vmin -15vmin;*/
+  /* -webkit-animation: soft-jiggle 3s infinite linear;
+  animation: soft-jiggle 3s infinite linear; */
+  /* -webkit-animation-delay: 2s;
+  animation-delay: 2s; */
 }
 
 .spark {
@@ -50,14 +64,15 @@ body {
   position: relative;
   right: 8vmin;
   bottom: 6vmin;
-  -webkit-animation: oval-to-circle 3s infinite linear;
-          animation: oval-to-circle 3s infinite linear;
+  -webkit-animation: oval-to-circle 3s infinite linear,
+    jiggle 0.4s infinite linear;
+  animation: oval-to-circle 3s infinite linear, jiggle 0.4s infinite linear;
 }
 
-.spark-wrapper {
+/* .spark-wrapper {
   -webkit-animation: jiggle 0.4s infinite linear;
-          animation: jiggle 0.4s infinite linear;
-}
+  animation: jiggle 0.4s infinite linear;
+} */
 
 @-webkit-keyframes oval-to-circle {
   0% {
@@ -88,17 +103,6 @@ body {
     height: 12vmin;
   }
 }
-/*.eye-pupil {
- border-radius: 100% ;
-  background-color: black;
-  padding: 20vmin;
-  height: 5vmin;
-  width: 5vmin;
-  /*position: absolute;
-  top: 9vmin;
-  right: 6vmin;
-  margin: -16vmin 0vmin 0vmin -17vmin;
-}*/
 @-webkit-keyframes pupillary-reflex {
   0% {
     width: 6vmin;
@@ -125,6 +129,52 @@ body {
   }
   100% {
     width: 40vmin;
+  }
+}
+@-webkit-keyframes soft-jiggle {
+  0% {
+    transform: none;
+  }
+  70% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+  }
+  85% {
+    transform: translate(1px, 1px);
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes soft-jiggle {
+  0% {
+    transform: none;
+  }
+  70% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+  }
+  85% {
+    transform: translate(1px, 1px);
+  }
+  90% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: none;
   }
 }
 
@@ -161,5 +211,44 @@ body {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  34% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+  50% {
+    opacity: 0.89;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  }
+}
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  34% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+  50% {
+    opacity: 0.89;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
   }
 }
