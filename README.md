@@ -2,5 +2,5 @@
 Simple cat eyes animation with CSS.
 
 
-https://user-images.githubusercontent.com/85313841/194845197-6e117a67-ea3d-4060-aa3b-c8fef8da8ce2.mp4
 
+![Cat Eyes - Made with Clipchamp](https://user-images.githubusercontent.com/85313841/194845437-e8d6f36c-6b2f-47a1-bd5a-074cafc4b138.gif)
